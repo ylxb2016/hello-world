@@ -1,5 +1,5 @@
 
-**_提醒！请在掌握了基本的辅种续种过程，再来理解本教程。**  
+**_提醒！请在掌握了基本的辅种续种过程，再来理解本教程。先占坑简单写写_**  
 [辅种&续种教程](https://www.tjupt.org/forums.php?action=viewtopic&forumid=15&topicid=5826)  
 [同文件不同文件名 辅种教程 新手慎用】硬链工具 From 千反田える@U2](https://www.tjupt.org/forums.php?action=viewtopic&forumid=15&topicid=15208)  
 # 介绍  
@@ -12,12 +12,12 @@
   
 部分站点上传torrent后的修改情况大致分为3类，为避免有幸被哪位大佬看中然后全球ban什么的，我就不放出具体的统计结果了：  
   
-***  
+```  
 1.只修改了announce字段，或添加announce-list的list  
 2.修改了announce、announce-list、source字段  
 3.除了常规的修改announce、announce-list、source字段，还会添加或者修改一些字段ttg_tag,publisher-url,comment或者一些特殊的检验字段什么的。  
   
-***  
+```  
 以TJUPT为例子，TJUPT属于情况2和情况3  
 TJUPT:  
 - 1.如果原torrent包含source字段，那么就是常规的修改announce字段，添加announce-list的list，修改source为“\[www.tjupt.org\] 北洋园PT”.  
@@ -97,7 +97,7 @@ https://github.com/GerryFerdinandus/bittorrent-tracker-editor
 4.**_Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent_**直接从PTP下载的种子。  
 MD5值以及种子hash（不是torrent文件的hash）  
   
-***  
+```  
   
 文件： \[TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent  
 大小： 57, 566 字节  
@@ -120,7 +120,7 @@ MD5： 4438183AF02D7EA493B06C3865087BFB
 MD5： 4438183AF02D7EA493B06C3865087BFB  
 种子hash：bac93f451b47a1f4c62837069d802970b0af56a7  
   
-***  
+```  
 
 * * *
 
@@ -135,7 +135,10 @@ MD5： 4438183AF02D7EA493B06C3865087BFB
   
 ### 第三层次：  
 然而，你可能会得到一个红种提示你该种子未注册。这个种子可能是比较早期的原因，这个时候PTP官方下载的种子其实并没有source字段，这个种子其实就相当于我上边说的第一种比较理想的情况了，但是因为这个种子被上传到TJUPT的时候被添加了source字段，所以咱们需要手动把source字段删除，这时候得到的hash应该和PTP直接下载到的Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent的hash一模一样了，此时直接加载到utorrent就可以了。其实这时已经可以告一段落了，但是这时你检验\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent的MD5发现和Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent的MD5不同，也就是说他俩严格意义上海不是相同的文件，为了得到一模一样的MD5，你需要把\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent里的announce-list字段删除，因为PTP种子里Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent并没有announce-list字段，这时另存为\[EDIT2-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent，检验一下就发现MD5一样了，现在可以说我们通过编辑制作出了一模一样的torrent文件了，这时你去辅种，更是毫无疑问，因为这个文件和你从PTP下载下来的一模一样！是真正意义上的同一个文件。  
-
+![1.png](https://i.loli.net/2019/01/09/5c35b78ab4f70.png)
+![2.png](https://i.loli.net/2019/01/09/5c35b78ab4bf2.png)
+![3.png](https://i.loli.net/2019/01/09/5c35b78ab43c8.png)
+![4.png](https://i.loli.net/2019/01/09/5c35b78ab31b6.png)
 * * *
 
   
@@ -154,27 +157,27 @@ PS：因为PTP上存在有新旧2种模式的种子，所以大家要辅种PTP�
   
 **进阶教程：**  
 利用CLI工具批量修改种子  
-#1.【python】xseed命令  
+# 1.【python】xseed命令  
 https://github.com/whatbox/xseed  
 在linux或mac或WSL下，请先安装好git和python-pip工具，先下载xseed命令行工具  
   
-***  
+```  
 git clone https://github.com/whatbox/xseed  
 pip install bencode  
 chmod +x ./xseed  
 cp ./xseed /usr/bin/xseed  
 xseed -h  
   
-***  
+```  
 在windows下，python2可行，python3貌似需要自己安装比较多的模块，不兼容？不推荐。  
   
-***  
+```  
 打开https://raw.githubusercontent.com/whatbox/xseed/master/xseed  
 复制文本到记事本，粘贴，另存为xseed.py  
 pip install bencode  
 然后在xseed.py的文件夹（或者你放到环境变量的文件中）输入python xseed.py -h即可查看到命令帮助文件  
   
-***  
+```  
 帮助命令如下>usage: xseed \[-h\] \[-v\] \[-e\] \[-o OUTFILE\] \[-d PATH\] \[-a URL\] \[-p\] \[-n\]  
 \[-c COMMENT\]  
 files \[files ...\]  
@@ -201,13 +204,13 @@ replace comment with the one specified
   
 ## 举例：  
 1.修改某个torrent的tracker并另存为123.torrent（默认是直接在原torrent上修改的）  
-***  
+```  
 xseed -o 123.torrent -a http://test.com/announce Baby.Driver.2017.720p.BluRay.DD5.1.x264-decibeL.torrent  
-***  
+```  
 2.直接在原torrent文件上批量修改tracker  
-***  
+```  
 xseed -ea http://test.com/announce ./temp/*.torrent  
-***  
+```  
   
 
 * * *
@@ -231,14 +234,14 @@ rTorrent扩展，如rTorrent队列管理器和统计信息（正在进行中）�
   
 安装方法一：（推荐）  
 在linux或mac或WSL或者windows下，请先安装好python-pip工具  
-***  
+```  
 pip2 install pyrocore  
-***  
+```  
   
 安装方法二：  
 以Ubuntu16.04为例，root身份安装会失败，请切换为普通账户安装！  
   
-***  
+```  
 sudo apt-get install python python-dev python-virtualenv python-pip \  
 python-setuptools python-pkg-resources git build-essential  
 mkdir -p ~/bin ~/.local  
@@ -252,7 +255,7 @@ git clone "https://github.com/pyroscope/pyrocore.git" ~/.local/pyroscope
 \# Check success  
 pyroadmin --version # call "exec $SHELL -l" if this fails, and retry  
   
-***  
+```  
 
 * * *
 
@@ -268,9 +271,9 @@ pyroadmin是管理任务的助手（主要是配置处理）。
 rtevent，rtmv，rtsweep，rtxmlrpc都是rtorrent的配套工具  
   
 安装完毕来看一下几个命令的使用帮助：  
-***  
+```  
 chtor -h  
-***  
+```  
 >Usage: chtor \[options\] <metafile>...  
   
 chtor 0.5.3 from /usr on Python 2.7.12  
@@ -330,9 +333,9 @@ field to the info dict ensuring unique info hashes
 --no-date remove the 'creation date' field  
   
   
-***  
+```  
 mktor -h  
-***  
+```  
 >Usage: mktor \[options\] <dir-or-file> <tracker-url-or-alias>... | <magnet-uri>  
   
 mktor 0.5.3 from /usr on Python 2.7.12  
@@ -385,9 +388,9 @@ create second metafile containing libtorrent fast-
 resume information  
   
   
-***  
+```  
 lstor -h  
-***  
+```  
 >lstor 0.5.3 from /usr on Python 2.7.12  
 Copyright (c) 2009 - 2017 Pyroscope Project  
   
@@ -417,9 +420,9 @@ size in bytes
   
   
   
-***  
+```  
 hashcheck -h  
-***  
+```  
 >Usage: hashcheck \[options\] <metafile> \[<data-dir-or-file>\]  
   
 hashcheck 0.5.3 from /usr on Python 2.7.12  
@@ -457,9 +460,9 @@ override configuration attributes
 ## mktor举例：  
   
 1.将当前目录下的文件全部制作为种子，并保存到/home/torrent文件夹下,并排除nfo文件  
-***  
+```  
 ls -1 | xargs -d$'\\n' -I{} mktor -p --exclude *.nfo -o /home/torrent "{}" "http://test.com"  
-***  
+```  
 2.将当前目录下的文件夹全部制作为种子，并保存到当前文件夹下,并排除nfo文件  
 find . -mindepth 1 -maxdepth 1 -type d \\! -name ".*" -print0 | sort -z | xargs -0I{} mktor --exclude *.nfo -p "{}" "http://test.com"  
 
@@ -469,21 +472,21 @@ find . -mindepth 1 -maxdepth 1 -type d \\! -name ".*" -print0 | sort -z | xargs 
 ## lstor举例：  
   
 1.只显示当前文件夹下所有种子的hash字段和文件大小、种子名字段，  
-***  
+```  
 lstor -qo \_\_hash\_\_,info.piece\ length,info.name *.torrent  
-***  
+```  
 2.显示123.torrent的简单信息  
-***  
+```  
 lstor 123.torrent  
-***  
+```  
 3.显示123.torrent全部的信息，默认会打码passkey  
-***  
+```  
 lstor --raw 123.torrent  
-***  
+```  
 4.3.显示123.torrent信息，并显示passkey  
-***  
+```  
 lstor --reveal 123.torrent  
-***  
+```  
 
 * * *
 
@@ -492,26 +495,26 @@ lstor --reveal 123.torrent
 这个chtor工具相比其他BEncode工具较为完整，可以修改增加删除任何字段.可以与GUI工具BEncode Editor和torrent-file-editor媲美.  
 需要注意的是如果字符串在字典（Dictionary）之下，需要在字符串前加上字典名，如一般来说source字段位于torrent结构树（tree）中的info之下，那么修改或者设置的source的时候，就需要写为info.source；而如果要删除某个字段，则直接“-s 字段名”即可，不用加等号来赋值，如“chtor -s info.source 123.torrent”即可删除123.torrent中的source字段.  
 1.将本目录下所有种子的tracker修改，并修改source字段为PTP，并禁止默认添加的x\_cross\_seed字段，并另存到此文件夹下的torrent文件夹  
-***  
+```  
 chtor --reannounce-all=http://test.com -s info.source=PTP --no-cross-seed *.torrent ./torrent/  
-***  
+```  
 2.将本目录下所有种子的tracker修改，并禁止默认添加的x\_cross\_seed字段，直接修改在原torrent文件上.  
-***  
+```  
 chtor --reannounce-all=http://test.com --no-cross-seed *.torrent  
-***  
+```  
 3.将本目录下所有种子的tracker修改，并删除source字段，并禁止默认添加的x\_cross\_seed字段，并另存到此文件夹下的torrent文件夹  
-***  
+```  
 chtor --reannounce-all=http://test.com -s info.source --no-cross-seed *.torrent -o ./torrent/  
-***  
+```  
 
 * * *
 
   
 ## 【校验文件】hashcheck举例：  
 1.校验种子123.torrent对应的123文件夹是否完整  
-***  
+```  
 hashcheck -v 123.torrent ./123  
-***  
+```  
   
 
 * * *
@@ -528,13 +531,13 @@ https://rndusr.github.io/torf-cli/torf.1.html
 在linux或mac或WSL下，请先安装好python-pip工具，先下载命令行工具  
 需要注意的是，此工具需要python3  
   
-***  
+```  
 pip install torf  
 pip install pyxdg  
 pip3 install torf-cli  
 torf -h  
   
-***  
+```  
 
 * * *
 
@@ -648,21 +651,21 @@ Display the version number and exit.
   
 ## 举例：  
 1.制作一个名为foo。torrent的种子，并包含2个tracker  
-***  
+```  
 torf path/to/foo -t http://bar:123/announce -t http://baz:321/announce --private  
-***  
+```  
 2.显示foo.torrent的信息  
-***  
+```  
 torf -i foo.torrent  
-***  
+```  
 3.修改种子的comment字段，删除制作时间字段，并另存为bar.torrent  
-***  
+```  
 torf -i foo.torrent -c 'New comment' -D -o bar.torrent  
-***  
+```  
 4.显示foo.torrent里文件列表  
-***  
+```  
 torf -i foo.torrent | grep '^Files' | cut -f2-  
-***  
+```  
   
 
 * * *
@@ -681,9 +684,9 @@ https://github.com/transmission/transmission/wiki/Scripts
 
   
 ## 安装transmission后，查看命令帮助  
-***  
+```  
 transmission-edit -h  
-***  
+```  
 >Usage: transmission-edit \[options\] torrent-file(s)  
   
 Options:  
@@ -700,17 +703,17 @@ Options:
 ## 举例：  
   
 1.在网站上重置passkey后，批量修改torrent文件的passkey  
-***  
+```  
 transmission-edit -r old-passcode new-passcode ~/.config/transmission/torrents/*\\.torrent  
-***  
+```  
 2.添加种子的tracker  
-***  
+```  
 transmission-edit -a http://test.com ~/.config/transmission/torrents/*\\.torrent  
-***  
+```  
 3.删除种子的tracker  
-***  
+```  
 transmission-edit -d http://test.com ~/.config/transmission/torrents/*\\.torrent  
-***  
+```  
   
 
 * * *
@@ -725,14 +728,14 @@ https://github.com/kz26/dottorrent
 https://github.com/kz26/dottorrent-gui  
 在linux或mac或WSL或windows下，请先安装好python-pip工具，先下载命令行工具  
   
-***  
+```  
 pip3 install dottorrent-cli  
 dottorrent -h  
   
-***  
+```  
   
   
-***  
+```  
 ## 用法  
 >usage: dottorrent \[-h\] \[--tracker TRACKER\] \[--web\_seed WEB\_SEED\]  
 \[--piece\_size PIECE\_SIZE\] \[--private\] \[--source SOURCE\]  
@@ -773,14 +776,14 @@ timestamp/none/now (default: now)
 这是一个制作种子，torrent的命令行工具，  
 ## 举例：  
 1.将123.mkv制作一个名为test.torrent  
-***  
+```  
 dottorrent -t http://test.com/announce -v 123.mkv ./test.torrent  
   
-***  
+```  
 2.将123.mkv制作一个名为test1.torrent，区块大小16MB,私有种子，source设置为PTP，添加评论"this is a test file"，并将文件MD5值加入torrent中。  
-***  
+```  
 dottorrent -t http://test.com/announce -s 16M -p --source PTP -c "this is a test file" --md5 -v xseed ./test1.torrent  
-***  
+```  
   
 
 * * *
@@ -788,9 +791,9 @@ dottorrent -t http://test.com/announce -s 16M -p --source PTP -c "this is a test
   
 ## 题外话：  
 接下来我们通过之前提到的lstor命令可以验证一下这个种子的信息.  
-***  
+```  
 lstor test.torrent --raw  
-***  
+```  
 可得到此种子的信息  
 >WARNING:pyrocore.scripts.lstor.MetafileLister:Found 0 candidate versions  
 WARNING:pyrocore.scripts.lstor.MetafileLister:Software version cannot be determined!  
@@ -807,9 +810,9 @@ WARNING:pyrocore.scripts.lstor.MetafileLister:Software version cannot be determi
 'source': 'PTP'}}  
 INFO:pyrocore.scripts.lstor.MetafileLister:Total time: 0.008 seconds.  
   
-***  
+```  
 md5sum ./xseed  
-***  
+```  
 >3eb13567ba944ca13d48777d2e7f77ac ./xseed  
   
   
