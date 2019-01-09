@@ -1,5 +1,6 @@
 
 **_提醒！请在掌握了基本的辅种续种过程，再来理解本教程。先占坑简单写写_**  
+
 [辅种&续种教程](https://www.tjupt.org/forums.php?action=viewtopic&forumid=15&topicid=5826)  
 [同文件不同文件名 辅种教程 新手慎用】硬链工具 From 千反田える@U2](https://www.tjupt.org/forums.php?action=viewtopic&forumid=15&topicid=15208)  
 # 介绍  
@@ -73,10 +74,10 @@ https://github.com/GerryFerdinandus/bittorrent-tracker-editor
 其中全能的有：BEncode Editor和torrent-file-editor，他俩具有直接修改BEncode编码的功能，可以修改、增加、删除所有字段。  
   
 需要注意：  
->- 1.TorrentsAutoReTracker这个工具可以**批量修改**announce字段和source字段，但是同时也会将torrent文件的comment，created by，creation date字段修改掉。这样的话，无法得到相同hash的torrent文件，这个工具可以用来转发种子，不能用来直接辅种。好处在于可以在配置文件种加入好多个tracker，然后给你一个菜单再去选择这是其他工具所不能的。  
-- 2.torrent\_s2 这个工具，转自skyeysnow天雪动漫，除了可以修改tracker之外还可以制作种子。Windows版:直接把文件/文件夹拖到 torrent\_s2上面即可完成制作种子；Linux版: mktorrent\_s2 -h直接把文件夹或文件拖到 torrent\_s2.exe 上使用即可，提供修改tracker功能以及一个鼠标右键弹出菜单的方案，见文件夹"附加功能"内。  
-- 3\. trackereditor_win32这个工具本来是BT用的，但是PT也可以用。可以批量修改announce字段，但无法修改source字段  
-4.TorrentsAutoReTracker通过拖动可以用来修改announce字段，但无法修改source字段  
+>- 1.TorrentsAutoReTracker这个工具可以**批量修改**announce字段和source字段，但是同时也会将torrent文件的comment，created by，creation date字段修改掉。这样的话，无法得到相同hash的torrent文件，这个工具可以用来转发种子，不能用来直接辅种。好处在于可以在配置文件种加入好多个tracker，然后给你一个菜单再去选择这是其他工具所不能的。
+>- 2.torrent\_s2 这个工具，转自skyeysnow天雪动漫，除了可以修改tracker之外还可以制作种子。Windows版:直接把文件/文件夹拖到 torrent\_s2上面即可完成制作种子；Linux版: mktorrent\_s2 -h直接把文件夹或文件拖到 torrent\_s2.exe 上使用即可，提供修改tracker功能以及一个鼠标右键弹出菜单的方案，见文件夹"附加功能"内。  
+>- 3\. trackereditor_win32这个工具本来是BT用的，但是PT也可以用。可以批量修改announce字段，但无法修改source字段  
+>- 4.TorrentsAutoReTracker通过拖动可以用来修改announce字段，但无法修改source字段  
   
 
   
@@ -91,14 +92,13 @@ https://github.com/GerryFerdinandus/bittorrent-tracker-editor
 
   
 这里提前给出一下各个阶段文件的MD5和种子的hash值，定义如下  
-1.**\[TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent**直接从TJUPT下载到的种子  
-2.**_\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent_**基于TJUPT种子修改了announce和删除source字段的种子。  
-3.**_\[EDIT2-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent_**基于TJUPT种子修改了announce和删除source字段、删除了announce-list字段的种子。  
-4.**_Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent_**直接从PTP下载的种子。  
-MD5值以及种子hash（不是torrent文件的hash）  
-  
+> 1.**\[TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent**直接从TJUPT下载到的种子  
+> 2.**_\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent_**基于TJUPT种子修改了announce和删除source字段的种子。  
+> 3.**_\[EDIT2-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent_**基于TJUPT种子修改了announce和删除source字段、删除了announce-list字段的种子。  
+> 4.**_Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent_**直接从PTP下载的种子。  
+> MD5值以及种子hash（不是torrent文件的hash）  
+
 ```  
-  
 文件： \[TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent  
 大小： 57, 566 字节  
 MD5： AFAE51C23FCB7076EA50B605D039A4F1  
@@ -130,7 +130,7 @@ MD5： 4438183AF02D7EA493B06C3865087BFB
 ### 第二层次：  
 接下来进行source字段的修改，source字段的修改需要从现在的标签“主要”切换标签“树”下，进行修改，如图3黄色方框中所示，将其中的字段修改为PTP即可。一般来说即使就完成了所有的修改，另存为\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent，此时你就可以将\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent加载到utorrent进行辅种了。只要torrent文件具有相同的torrent hash对于utorrent以及tracker服务器等来说，这其实就是一个种子了，即使他们的MD5值不一定不用。  
   
-补充  
+### 补充  
 之前还好奇为何这样修改后种子的hash为何保持不变，却没有进一步去研究。谢R酱提醒，验证了一下，发现修改torrent文件的tree根目录下的announce，announce-list，comment，created by，creation date，encoding甚至直接添加一个字段都不会改变种子的hash，只有在修改info字典下的字段才会改变hash，如info.length,info.name,info.piece length,info.pieces,info.private,info.source等均会改变种子的hash。  
   
 ### 第三层次：  
@@ -141,18 +141,11 @@ MD5： 4438183AF02D7EA493B06C3865087BFB
 ![4.png](https://i.loli.net/2019/01/09/5c35b78ab31b6.png)
 * * *
 
-  
+### 补充  
 PS：因为PTP上存在有新旧2种模式的种子，所以大家要辅种PTP种子的时候，可以分别批量制作2次种子，然后再辅种，把其中的红种删除即可。另外，torrent文件里存在mkv之外的文件，一般来说是没法成功辅种的，因为PTP要去种子不能有nfo，sample之类的资源，所以这个种子并不是从PTP自己转载的torrent，这样的种子是没法取修改来辅种的。辅种第一步可以检查TJUPT上下载下来的这个torrent的comment字段，是不是有**https://XXXXXXXXXXXX/torrents.php?id=21322&torrentid=145756**这样的字段，有的话一般说明是直接从PTP转载来的种子而不是上传者自行制作的torrentr。  
 完成done  
 
 * * *
-
-  
-  
-  
-
-* * *
-
   
   
 **进阶教程：**  
@@ -178,28 +171,29 @@ pip install bencode
 然后在xseed.py的文件夹（或者你放到环境变量的文件中）输入python xseed.py -h即可查看到命令帮助文件  
   
 ```  
-帮助命令如下>usage: xseed \[-h\] \[-v\] \[-e\] \[-o OUTFILE\] \[-d PATH\] \[-a URL\] \[-p\] \[-n\]  
-\[-c COMMENT\]  
-files \[files ...\]  
-  
-positional arguments:  
-files files to be modified  
-  
-optional arguments:  
--h, --help show this help message and exit  
--v, --verbose switch on verbose mode  
--e, --edit-in-place overwrite files without prompting  
--o OUTFILE, --output OUTFILE  
-specify output filename. (can not be used if multiple  
-files are given)  
--d PATH, --directory PATH  
-specify a directory to save output to  
--a URL, --announce URL  
-replace announce-url with the one specified  
--p, --private make torrent private  
--n, --no-cross-seed do not randomize info hashes  
--c COMMENT, --comment COMMENT  
-replace comment with the one specified  
+帮助命令如下
+> usage: xseed \[-h\] \[-v\] \[-e\] \[-o OUTFILE\] \[-d PATH\] \[-a URL\] \[-p\] \[-n\]  
+> \[-c COMMENT\]  
+> files \[files ...\]  
+>   
+> positional arguments:  
+> files files to be modified  
+>   
+> optional arguments:  
+> -h, --help show this help message and exit  
+> -v, --verbose switch on verbose mode  
+> -e, --edit-in-place overwrite files without prompting  
+> -o OUTFILE, --output OUTFILE  
+> specify output filename. (can not be used if multiple  
+> files are given)  
+> -d PATH, --directory PATH  
+> specify a directory to save output to  
+> -a URL, --announce URL  
+> replace announce-url with the one specified  
+> -p, --private make torrent private  
+> -n, --no-cross-seed do not randomize info hashes  
+> -c COMMENT, --comment COMMENT  
+> replace comment with the one specified  
   
   
 ## 举例：  
@@ -274,179 +268,179 @@ rtevent，rtmv，rtsweep，rtxmlrpc都是rtorrent的配套工具
 ```  
 chtor -h  
 ```  
->Usage: chtor \[options\] <metafile>...  
-  
-chtor 0.5.3 from /usr on Python 2.7.12  
-Copyright (c) 2009 - 2017 Pyroscope Project  
-  
-Change attributes of a bittorrent metafile.  
-  
-For more details, see the full documentation at  
-  
-https://pyrocore.readthedocs.io/  
-  
-Options:  
---version show program's version number and exit  
--h, --help show this help message and exit  
--q, --quiet omit informational logging  
--v, --verbose increase informational logging  
---debug always show stack-traces for errors  
---cron run in cron mode (with different logging  
-configuration)  
---config-dir=DIR configuration directory \[~/.pyroscope\]  
---config-file=PATH additional config file(s) to read  
--D KEY=VAL \[-D ...\], --define=KEY=VAL \[-D ...\]  
-override configuration attributes  
--n, --dry-run don't write changes to disk, just tell what would  
-happen  
--V, --no-skip do not skip broken metafiles that fail the integrity  
-check  
--o PATH, --output-directory=PATH  
-optional output directory for the modified metafile(s)  
--p, --make-private make torrent private (DHT/PEX disabled)  
--P, --make-public make torrent public (DHT/PEX enabled)  
--s KEY=VAL \[-s ...\], --set=KEY=VAL \[-s ...\]  
-set a specific key to the given value; omit the '=' to  
-delete a key  
--r KEYcREGEXcSUBSTc \[-r ...\], --regex=KEYcREGEXcSUBSTc \[-r ...\]  
-replace pattern in a specific key by the given  
-substitution  
--C, --clean remove all non-standard data from metafile outside the  
-info dict  
--A, --clean-all remove all non-standard data from metafile including  
-inside the info dict  
--X, --clean-xseed like --clean-all, but keep libtorrent resume  
-information  
--R, --clean-rtorrent remove all rTorrent session data from metafile  
--H DATAPATH, --hashed=DATAPATH, --fast-resume=DATAPATH  
-add libtorrent fast-resume information (use {} in  
-place of the torrent's name in DATAPATH)  
--a URL, --reannounce=URL  
-set a new announce URL, but only if the old announce  
-URL matches the new one  
---reannounce-all=URL set a new announce URL on ALL given metafiles  
---no-ssl force announce URL to 'http'  
---no-cross-seed when using --reannounce-all, do not add a non-standard  
-field to the info dict ensuring unique info hashes  
---comment=TEXT set a new comment (an empty value deletes it)  
---bump-date set the creation date to right now  
---no-date remove the 'creation date' field  
+> Usage: chtor \[options\] <metafile>...  
+>   
+> chtor 0.5.3 from /usr on Python 2.7.12  
+> Copyright (c) 2009 - 2017 Pyroscope Project  
+>   
+> Change attributes of a bittorrent metafile.  
+>   
+> For more details, see the full documentation at  
+>   
+> https://pyrocore.readthedocs.io/  
+>   
+> Options:  
+> --version show program's version number and exit  
+> -h, --help show this help message and exit  
+> -q, --quiet omit informational logging  
+> -v, --verbose increase informational logging  
+> --debug always show stack-traces for errors  
+> --cron run in cron mode (with different logging  
+> configuration)  
+> --config-dir=DIR configuration directory \[~/.pyroscope\]  
+> --config-file=PATH additional config file(s) to read  
+> -D KEY=VAL \[-D ...\], --define=KEY=VAL \[-D ...\]  
+> override configuration attributes  
+> -n, --dry-run don't write changes to disk, just tell what would  
+> happen  
+> -V, --no-skip do not skip broken metafiles that fail the integrity  
+> check  
+> -o PATH, --output-directory=PATH  
+> optional output directory for the modified metafile(s)  
+> -p, --make-private make torrent private (DHT/PEX disabled)  
+> -P, --make-public make torrent public (DHT/PEX enabled)  
+> -s KEY=VAL \[-s ...\], --set=KEY=VAL \[-s ...\]  
+> set a specific key to the given value; omit the '=' to  
+> delete a key  
+> -r KEYcREGEXcSUBSTc \[-r ...\], --regex=KEYcREGEXcSUBSTc \[-r ...\]  
+> replace pattern in a specific key by the given  
+> substitution  
+> -C, --clean remove all non-standard data from metafile outside the  
+> info dict  
+> -A, --clean-all remove all non-standard data from metafile including  
+> inside the info dict  
+> -X, --clean-xseed like --clean-all, but keep libtorrent resume  
+> information  
+> -R, --clean-rtorrent remove all rTorrent session data from metafile  
+> -H DATAPATH, --hashed=DATAPATH, --fast-resume=DATAPATH  
+> add libtorrent fast-resume information (use {} in  
+> place of the torrent's name in DATAPATH)  
+> -a URL, --reannounce=URL  
+> set a new announce URL, but only if the old announce  
+> URL matches the new one  
+> --reannounce-all=URL set a new announce URL on ALL given metafiles  
+> --no-ssl force announce URL to 'http'  
+> --no-cross-seed when using --reannounce-all, do not add a non-standard  
+> field to the info dict ensuring unique info hashes  
+> --comment=TEXT set a new comment (an empty value deletes it)  
+> --bump-date set the creation date to right now  
+> --no-date remove the 'creation date' field  
   
   
 ```  
 mktor -h  
 ```  
->Usage: mktor \[options\] <dir-or-file> <tracker-url-or-alias>... | <magnet-uri>  
-  
-mktor 0.5.3 from /usr on Python 2.7.12  
-Copyright (c) 2009 - 2017 Pyroscope Project  
-  
-Create a bittorrent metafile.  
-  
-If passed a magnet URI as the only argument, a metafile is created  
-in the directory specified via the configuration value 'magnet_watch',  
-loadable by rTorrent. Which means you can register 'mktor' as a magnet:  
-URL handler in Firefox.  
-  
-For more details, see the full documentation at  
-  
-https://pyrocore.readthedocs.io/  
-  
-Options:  
---version show program's version number and exit  
--h, --help show this help message and exit  
--q, --quiet omit informational logging  
--v, --verbose increase informational logging  
---debug always show stack-traces for errors  
---cron run in cron mode (with different logging  
-configuration)  
---config-dir=DIR configuration directory \[~/.pyroscope\]  
---config-file=PATH additional config file(s) to read  
--D KEY=VAL \[-D ...\], --define=KEY=VAL \[-D ...\]  
-override configuration attributes  
--p, --private disallow DHT and PEX  
---no-date leave out creation date  
--o PATH, --output-filename=PATH  
-optional file name (or target directory) for the  
-metafile  
--r NAME, --root-name=NAME  
-optional root name (default is basename of the data  
-path)  
--x PATTERN \[-x ...\], --exclude=PATTERN \[-x ...\]  
-exclude files matching a glob pattern from hashing  
---comment=TEXT optional human-readable comment  
--s KEY=VAL \[-s ...\], --set=KEY=VAL \[-s ...\]  
-set a specific key to the given value; omit the '=' to  
-delete a key  
---no-cross-seed do not automatically add a field to the info dict  
-ensuring unique info hashes  
--X LABEL, --cross-seed=LABEL  
-set additional explicit label for cross-seeding  
-(changes info hash, use '@entropy' to randomize it)  
--H, --hashed, --fast-resume  
-create second metafile containing libtorrent fast-  
-resume information  
+> Usage: mktor \[options\] <dir-or-file> <tracker-url-or-alias>... | <magnet-uri>  
+>   
+> mktor 0.5.3 from /usr on Python 2.7.12  
+> Copyright (c) 2009 - 2017 Pyroscope Project  
+>   
+> Create a bittorrent metafile.  
+>   
+> If passed a magnet URI as the only argument, a metafile is created  
+> in the directory specified via the configuration value 'magnet_watch',  
+> loadable by rTorrent. Which means you can register 'mktor' as a magnet:  
+> URL handler in Firefox.  
+>   
+> For more details, see the full documentation at  
+>   
+> https://pyrocore.readthedocs.io/  
+>   
+> Options:  
+> --version show program's version number and exit  
+> -h, --help show this help message and exit  
+> -q, --quiet omit informational logging  
+> -v, --verbose increase informational logging  
+> --debug always show stack-traces for errors  
+> --cron run in cron mode (with different logging  
+> configuration)  
+> --config-dir=DIR configuration directory \[~/.pyroscope\]  
+> --config-file=PATH additional config file(s) to read  
+> -D KEY=VAL \[-D ...\], --define=KEY=VAL \[-D ...\]  
+> override configuration attributes  
+> -p, --private disallow DHT and PEX  
+> --no-date leave out creation date  
+> -o PATH, --output-filename=PATH  
+> optional file name (or target directory) for the  
+> metafile  
+> -r NAME, --root-name=NAME  
+> optional root name (default is basename of the data  
+> path)  
+> -x PATTERN \[-x ...\], --exclude=PATTERN \[-x ...\]  
+> exclude files matching a glob pattern from hashing  
+> --comment=TEXT optional human-readable comment  
+> -s KEY=VAL \[-s ...\], --set=KEY=VAL \[-s ...\]  
+> set a specific key to the given value; omit the '=' to  
+> delete a key  
+> --no-cross-seed do not automatically add a field to the info dict  
+> ensuring unique info hashes  
+> -X LABEL, --cross-seed=LABEL  
+> set additional explicit label for cross-seeding  
+> (changes info hash, use '@entropy' to randomize it)  
+> -H, --hashed, --fast-resume  
+> create second metafile containing libtorrent fast-  
+> resume information  
   
   
 ```  
 lstor -h  
 ```  
->lstor 0.5.3 from /usr on Python 2.7.12  
-Copyright (c) 2009 - 2017 Pyroscope Project  
-  
-List contents of a bittorrent metafile.  
-  
-For more details, see the full documentation at  
-  
-https://pyrocore.readthedocs.io/  
-  
-Options:  
---version show program's version number and exit  
--h, --help show this help message and exit  
--q, --quiet omit informational logging  
--v, --verbose increase informational logging  
---debug always show stack-traces for errors  
---cron run in cron mode (with different logging  
-configuration)  
---reveal show full announce URL including keys  
---raw print the metafile's raw content in all detail  
--V, --skip-validation  
-show broken metafiles with an invalid structure  
--o KEY,KEY1.KEY2,..., --output=KEY,KEY1.KEY2,...  
-select fields to print, output is separated by TABs;  
-note that \_\_file\_\_ is the path to the metafile,  
-\_\_hash\_\_ is the info hash, and \_\_size\_\_ is the data  
-size in bytes  
+> lstor 0.5.3 from /usr on Python 2.7.12  
+> Copyright (c) 2009 - 2017 Pyroscope Project  
+>   
+> List contents of a bittorrent metafile.  
+>   
+> For more details, see the full documentation at  
+>   
+> https://pyrocore.readthedocs.io/  
+>   
+> Options:  
+> --version show program's version number and exit  
+> -h, --help show this help message and exit  
+> -q, --quiet omit informational logging  
+> -v, --verbose increase informational logging  
+> --debug always show stack-traces for errors  
+> --cron run in cron mode (with different logging  
+> configuration)  
+> --reveal show full announce URL including keys  
+> --raw print the metafile's raw content in all detail  
+> -V, --skip-validation  
+> show broken metafiles with an invalid structure  
+> -o KEY,KEY1.KEY2,..., --output=KEY,KEY1.KEY2,...  
+> select fields to print, output is separated by TABs;  
+> note that \_\_file\_\_ is the path to the metafile,  
+> \_\_hash\_\_ is the info hash, and \_\_size\_\_ is the data  
+> size in bytes  
   
   
   
 ```  
 hashcheck -h  
 ```  
->Usage: hashcheck \[options\] <metafile> \[<data-dir-or-file>\]  
-  
-hashcheck 0.5.3 from /usr on Python 2.7.12  
-Copyright (c) 2009 - 2017 Pyroscope Project  
-  
-Check a bittorrent metafile.  
-  
-For more details, see the full documentation at  
-  
-https://pyrocore.readthedocs.io/  
-  
-Options:  
---version show program's version number and exit  
--h, --help show this help message and exit  
--q, --quiet omit informational logging  
--v, --verbose increase informational logging  
---debug always show stack-traces for errors  
---cron run in cron mode (with different logging  
-configuration)  
---config-dir=DIR configuration directory \[~/.pyroscope\]  
---config-file=PATH additional config file(s) to read  
--D KEY=VAL \[-D ...\], --define=KEY=VAL \[-D ...\]  
-override configuration attributes  
-  
+> Usage: hashcheck \[options\] <metafile> \[<data-dir-or-file>\]  
+>   
+> hashcheck 0.5.3 from /usr on Python 2.7.12  
+> Copyright (c) 2009 - 2017 Pyroscope Project  
+>   
+> Check a bittorrent metafile.  
+>   
+> For more details, see the full documentation at  
+>   
+> https://pyrocore.readthedocs.io/  
+>   
+> Options:  
+> --version show program's version number and exit  
+> -h, --help show this help message and exit  
+> -q, --quiet omit informational logging  
+> -v, --verbose increase informational logging  
+> --debug always show stack-traces for errors  
+> --cron run in cron mode (with different logging  
+> configuration)  
+> --config-dir=DIR configuration directory \[~/.pyroscope\]  
+> --config-file=PATH additional config file(s) to read  
+> -D KEY=VAL \[-D ...\], --define=KEY=VAL \[-D ...\]  
+> override configuration attributes  
+>   
   
 
 * * *
@@ -464,7 +458,11 @@ override configuration attributes
 ls -1 | xargs -d$'\\n' -I{} mktor -p --exclude *.nfo -o /home/torrent "{}" "http://test.com"  
 ```  
 2.将当前目录下的文件夹全部制作为种子，并保存到当前文件夹下,并排除nfo文件  
-find . -mindepth 1 -maxdepth 1 -type d \\! -name ".*" -print0 | sort -z | xargs -0I{} mktor --exclude *.nfo -p "{}" "http://test.com"  
+
+```
+find . -mindepth 1 -maxdepth 1 -type d \\! -name ".*" -print0 | sort -z | xargs -0I{} mktor --exclude *.nfo -p "{}" "http://test.com"
+```
+
 
 * * *
 
@@ -543,107 +541,107 @@ torf -h
 
   
 ## 使用说明：  
->NAME  
-torf - command line tool to create, display and edit torrents  
-  
-SYNOPSIS  
-torf PATH \[OPTIONS\] \[-o TORRENT\]  
-torf -i TORRENT  
-torf -i TORRENT \[OPTIONS\] -o TORRENT  
-  
-DESCRIPTION  
-torf can create new torrents, display information about existing torrents, and edit torrents (e.g. to remove a comment or change the tracker) without re-hashing the content.  
-  
-OPTIONS  
-Options that start with --no take precedence.  
-  
-PATH  
-The path to the torrent’s content.  
-  
---exclude, -e EXCLUDE  
-Exclude files from PATH that match the pattern EXCLUDE. This option may be given multiple times. It is ignored if PATH is not a directory. See EXCLUDING FILES.  
-  
---in, -i TORRENT  
-Read metainfo from TORRENT.  
-  
---out, -o TORRENT  
-Write torrent to TORRENT.  
-Default: NAME.torrent  
-  
---notorrent, -N  
-Do not create a torrent file.  
-  
---nomagnet, -M  
-Do not create a magnet link.  
-  
---name, -n NAME  
-Destination file or directory when the torrent is downloaded.  
-Default: Basename of PATH  
-  
---tracker, -t URL  
-The announce URL of a tracker. This option may be given multiple times.  
-  
---notracker, -T  
-Remove trackers from an existing torrent.  
-  
---webseed, -w URL  
-A webseed URL (BEP19). This option may be given multiple times.  
-  
---nowebseed, -W  
-Remove webseeds from an existing torrent.  
-  
---private, -p  
-Tell clients to use tracker(s) exclusively for peer discovery.  
-  
---noprivate, -P  
-Allow clients to use DHT and PEX for peer discovery.  
-  
---comment, -c COMMENT  
-A comment that is stored in the torrent file.  
-  
---nocomment, -C  
-Remove the comment from an existing torrent.  
-  
---date, -d DATE  
-The creation date in the format YYYY-MM-DD\[ HH:MM\[:SS\]\], now for the current time or today for the current time at midnight.  
-Default: today  
-  
---nodate, -D  
-Remove the creation date from an existing torrent.  
-  
---xseed, -x  
-Randomize the info hash to help with cross-seeding. This simply adds an entropy field to the info section of the metainfo and sets it to a random integer.  
-  
---noxseed, -X  
-De-randomize a previously randomized info hash of an existing torrent. This removes the entropy field from the info section of the metainfo.  
-  
---nocreator, -R  
-Remove the name of the application that created the torrent from an existing torrent.  
-  
---yes, -y  
-Answer all yes/no prompts with “yes”. At the moment, all this does is overwrite TORRENT without asking.  
-  
---config, -f FILE  
-Read command line arguments from configuration FILE. See CONFIGURATION FILE.  
-Default: $XDG\_CONFIG\_HOME/torf/config where $XDG\_CONFIG\_HOME defaults to ~/.config  
-  
---noconfig, -F  
-Do not use any configuration file.  
-  
---profile, -z PROFILE  
-Use predefined arguments specified in PROFILE. This option may be given multiple times. See CONFIGURATION FILE.  
-  
---human, -u  
-Display information in human-readable output even if stdout is not a TTY. See PIPING OUTPUT.  
-  
---nohuman, -U  
-Display information in machine-readable output even if stdout is a TTY. See PIPING OUTPUT.  
-  
---help, -h  
-Display a short help text and exit.  
-  
---version, -V  
-Display the version number and exit.  
+> NAME  
+> torf - command line tool to create, display and edit torrents  
+>   
+> SYNOPSIS  
+> torf PATH \[OPTIONS\] \[-o TORRENT\]  
+> torf -i TORRENT  
+> torf -i TORRENT \[OPTIONS\] -o TORRENT  
+>   
+> DESCRIPTION  
+> torf can create new torrents, display information about existing torrents, and edit torrents (e.g. to remove a comment or change the tracker) without re-hashing the content.  
+>   
+> OPTIONS  
+> Options that start with --no take precedence.  
+>   
+> PATH  
+> The path to the torrent’s content.  
+>   
+> --exclude, -e EXCLUDE  
+> Exclude files from PATH that match the pattern EXCLUDE. This option may be given multiple times. It is ignored if PATH is not a directory. See EXCLUDING FILES.  
+>   
+> --in, -i TORRENT  
+> Read metainfo from TORRENT.  
+>   
+> --out, -o TORRENT  
+> Write torrent to TORRENT.  
+> Default: NAME.torrent  
+>   
+> --notorrent, -N  
+> Do not create a torrent file.  
+>   
+> --nomagnet, -M  
+> Do not create a magnet link.  
+>   
+> --name, -n NAME  
+> Destination file or directory when the torrent is downloaded.  
+> Default: Basename of PATH  
+>   
+> --tracker, -t URL  
+> The announce URL of a tracker. This option may be given multiple times.  
+>   
+> --notracker, -T  
+> Remove trackers from an existing torrent.  
+>   
+> --webseed, -w URL  
+> A webseed URL (BEP19). This option may be given multiple times.  
+>   
+> --nowebseed, -W  
+> Remove webseeds from an existing torrent.  
+>   
+> --private, -p  
+> Tell clients to use tracker(s) exclusively for peer discovery.  
+>   
+> --noprivate, -P  
+> Allow clients to use DHT and PEX for peer discovery.  
+>   
+> --comment, -c COMMENT  
+> A comment that is stored in the torrent file.  
+>   
+> --nocomment, -C  
+> Remove the comment from an existing torrent.  
+>   
+> --date, -d DATE  
+> The creation date in the format YYYY-MM-DD\[ HH:MM\[:SS\]\], now for the current time or today for the current time at midnight.  
+> Default: today  
+>   
+> --nodate, -D  
+> Remove the creation date from an existing torrent.  
+>   
+> --xseed, -x  
+> Randomize the info hash to help with cross-seeding. This simply adds an entropy field to the info section of the metainfo and sets it to a random integer.  
+>   
+> --noxseed, -X  
+> De-randomize a previously randomized info hash of an existing torrent. This removes the entropy field from the info section of the metainfo.  
+>   
+> --nocreator, -R  
+> Remove the name of the application that created the torrent from an existing torrent.  
+>   
+> --yes, -y  
+> Answer all yes/no prompts with “yes”. At the moment, all this does is overwrite TORRENT without asking.  
+>   
+> --config, -f FILE  
+> Read command line arguments from configuration FILE. See CONFIGURATION FILE.  
+> Default: $XDG\_CONFIG\_HOME/torf/config where $XDG\_CONFIG\_HOME defaults to ~/.config  
+>   
+> --noconfig, -F  
+> Do not use any configuration file.  
+>   
+> --profile, -z PROFILE  
+> Use predefined arguments specified in PROFILE. This option may be given multiple times. See CONFIGURATION FILE.  
+>   
+> --human, -u  
+> Display information in human-readable output even if stdout is not a TTY. See PIPING OUTPUT.  
+>   
+> --nohuman, -U  
+> Display information in machine-readable output even if stdout is a TTY. See PIPING OUTPUT.  
+>   
+> --help, -h  
+> Display a short help text and exit.  
+>   
+> --version, -V  
+> Display the version number and exit.  
   
 
 * * *
@@ -735,41 +733,38 @@ dottorrent -h
 ```  
   
   
-```  
+
 ## 用法  
->usage: dottorrent \[-h\] \[--tracker TRACKER\] \[--web\_seed WEB\_SEED\]  
-\[--piece\_size PIECE\_SIZE\] \[--private\] \[--source SOURCE\]  
-\[--exclude RE\] \[--comment COMMENT\] \[--date DATE\] \[--md5\]  
-\[--verbose\]  
-path output_path  
-  
-Create a .torrent file  
-  
-positional arguments:  
-path path to file/directory to create torrent from  
-output_path Output path for created .torrent file. If a directory  
-is provided, the filename will be automatically  
-generated based on the input.  
-  
-optional arguments:  
--h, --help show this help message and exit  
---tracker TRACKER, -t TRACKER  
-tracker URL (can be specified multiple times)  
---web\_seed WEB\_SEED, -w WEB_SEED  
-web seed URL (can be specified multiple times)  
---piece\_size PIECE\_SIZE, -s PIECE_SIZE  
-piece size, e.g. 16KB, 1M. Leave unspecified for  
-automatic piece size  
---private, -p set private flag (useful for private trackers)  
---source SOURCE source string (useful for private trackers)  
---exclude RE, -x RE filename patterns that should be excluded (can be  
-specified multiple times)  
---comment COMMENT, -c COMMENT  
-string for the torrent comment field  
---date DATE, -d DATE Torrent creation date. Valid values: unix  
-timestamp/none/now (default: now)  
---md5 Add per-file MD5 hashes  
---verbose, -v verbose mode  
+> usage: dottorrent \[-h\] \[--tracker TRACKER\] \[--web\_seed WEB\_SEED\]  
+> \[--piece\_size PIECE\_SIZE\] \[--private\] \[--source SOURCE\]  
+> \[--exclude RE\] \[--comment COMMENT\] \[--date DATE\] \[--md5\]  
+> \[--verbose\]  
+> path output_path 
+> Create a .torrent file  
+> positional arguments:  
+> path path to file/directory to create torrent from  
+> output_path Output path for created .torrent file. If a directory  
+> is provided, the filename will be automatically  
+> generated based on the input.  
+> optional arguments:  
+> -h, --help show this help message and exit  
+> --tracker TRACKER, -t TRACKER  
+> tracker URL (can be specified multiple times)  
+> --web\_seed WEB\_SEED, -w WEB_SEED  
+> web seed URL (can be specified multiple times)  
+> --piece\_size PIECE\_SIZE, -s PIECE_SIZE  
+> piece size, e.g. 16KB, 1M. Leave unspecified for  
+> automatic piece size  
+> --private, -p set private flag (useful for private trackers)  
+> --source SOURCE source string (useful for private trackers)  
+> --exclude RE, -x RE filename patterns that should be excluded (can be  
+> specified multiple times)  
+> --comment COMMENT, -c COMMENT  
+> string for the torrent comment field  
+> --date DATE, -d DATE Torrent creation date. Valid values: unix  
+> timestamp/none/now (default: now)  
+> --md5 Add per-file MD5 hashes  
+> --verbose, -v verbose mode  
   
   
   
@@ -814,7 +809,6 @@ INFO:pyrocore.scripts.lstor.MetafileLister:Total time: 0.008 seconds.
 md5sum ./xseed  
 ```  
 >3eb13567ba944ca13d48777d2e7f77ac ./xseed  
-  
   
 
 * * *
