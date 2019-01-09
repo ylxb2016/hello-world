@@ -1,5 +1,5 @@
 
-**_提醒！请在掌握了基本的辅种续种过程，再来理解本教程。先占坑简单写写_**  
+**_提醒！请在掌握了基本的辅种续种过程，再来理解本教程。**  
 [辅种&续种教程](https://www.tjupt.org/forums.php?action=viewtopic&forumid=15&topicid=5826)  
 [同文件不同文件名 辅种教程 新手慎用】硬链工具 From 千反田える@U2](https://www.tjupt.org/forums.php?action=viewtopic&forumid=15&topicid=15208)  
 # 介绍  
@@ -154,7 +154,7 @@ PS：因为PTP上存在有新旧2种模式的种子，所以大家要辅种PTP�
   
 **进阶教程：**  
 利用CLI工具批量修改种子  
-## 1.【python】xseed命令  
+#1.【python】xseed命令  
 https://github.com/whatbox/xseed  
 在linux或mac或WSL下，请先安装好git和python-pip工具，先下载xseed命令行工具  
   
