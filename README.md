@@ -95,8 +95,9 @@ https://github.com/GerryFerdinandus/bittorrent-tracker-editor
 > 1.**\[TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent**直接从TJUPT下载到的种子  
 > 2.**_\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent_**基于TJUPT种子修改了announce和删除source字段的种子。  
 > 3.**_\[EDIT2-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent_**基于TJUPT种子修改了announce和删除source字段、删除了announce-list字段的种子。  
-> 4.**_Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent_**直接从PTP下载的种子。  
-> MD5值以及种子hash（不是torrent文件的hash）  
+> 4.**_Alice in Wonderland.2010.1080p.Blu-ray.x264.MKV.145756.torrent_**直接从PTP下载的种子。
+
+MD5值以及种子hash（不是torrent文件的hash）  
 
 ```  
 文件： \[TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent  
@@ -130,7 +131,7 @@ MD5： 4438183AF02D7EA493B06C3865087BFB
 ### 第二层次：  
 接下来进行source字段的修改，source字段的修改需要从现在的标签“主要”切换标签“树”下，进行修改，如图3黄色方框中所示，将其中的字段修改为PTP即可。一般来说即使就完成了所有的修改，另存为\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent，此时你就可以将\[EDIT-TJUPT\].Alice.in.Wonderland.2010.1080p.BluRay.x264-EbP.mkv.torrent加载到utorrent进行辅种了。只要torrent文件具有相同的torrent hash对于utorrent以及tracker服务器等来说，这其实就是一个种子了，即使他们的MD5值不一定不用。  
   
-### 补充  
+#### 补充  
 之前还好奇为何这样修改后种子的hash为何保持不变，却没有进一步去研究。谢R酱提醒，验证了一下，发现修改torrent文件的tree根目录下的announce，announce-list，comment，created by，creation date，encoding甚至直接添加一个字段都不会改变种子的hash，只有在修改info字典下的字段才会改变hash，如info.length,info.name,info.piece length,info.pieces,info.private,info.source等均会改变种子的hash。  
   
 ### 第三层次：  
